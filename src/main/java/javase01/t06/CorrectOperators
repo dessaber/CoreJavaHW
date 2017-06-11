@@ -1,0 +1,22 @@
+class MedicalStaff{}
+class Doctor extends MedicalStaff{}
+class Nurse extends MedicalStaff{}
+class HeadDoctor extends Doctor{}
+
+Operators                                           | Correct | Incorrect | Notes
+----------------------------------------------------------------------------------------------------------------------------------------
+Doctor doctor1 = new Doctor();                      |   [x]   |    [ ]    | Pretty self-explanatory example.
+Doctor doctor2 = new MedicalStaff();                |   [ ]   |    [x]    | Incorrect: MedicalStaff is a superclass to Doctor.
+Doctor doctor3 = new HeadDoctor();                  |   [x]   |    [ ]    | Correct due to polymorphism.
+Object object1 = new HeadDoctor();                  |   [x]   |    [ ]    | Correct since Object is THE superclass to all classes.
+HeadDoctor doctor5 = new Object();                  |   [ ]   |    [x]    | Incorrect: Object is a superclass to HeadDoctor.
+Doctor doctor6 = new Nurse();                       |   [ ]   |    [x]    | Incorrect: both objects are on the same level of hierarchy.
+Nurse nurse = new Doctor();                         |   [ ]   |    [x]    | The same reasoning as in the very previous example.
+Object object2 = new Nurse();                       |   [x]   |    [ ]    | Correct since Object is THE superclass to all classes.
+List<Doctor> list1 = new ArrayList<Doctor>();       |   [x]   |    [ ]    | "Programming to an interface".
+List<MedicalStaff> list2 = new ArrayList<Doctor>(); |   [ ]   |    [x]    | Generics are invariant, that's why this example is incorrect. If they were covariant, like arrays,
+                                                    |         |           | we could've have added Nurses to the first index of a List<MedicalStaff> medics, which would've referred to an ArrayList<Doctor>
+                                                    |         |           | and try to execute Doctor doctor = medics.get(0), and it would've been quite confusing.
+List<Doctor> list3 = new ArrayList<MedicalStaff>(); |   [ ]   |    [x]    | The same reasoning here. And it doesn't even matter that Doctor is a subclass to MedicalStaff.
+List<Object> list4 = new ArrayList<Doctor>();       |   [ ]   |    [x]    | And again.
+List<Object> list5 = new ArrayList<Object>();       |   [x]   |    [ ]    | Finally correct example.

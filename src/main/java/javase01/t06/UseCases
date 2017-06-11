@@ -1,0 +1,17 @@
+      |                                               Main functionality                                                   |                  Use cases
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Set   | Exactly that - set. No duplicates, no random access. Sorting is available via special realizations (like TreeSet). | "Find all unique words in this file". "Yes-No" decisions.
+      | Iterators are being used to traverse sets.                                                                         | Tasks when order doesn't really matter.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+List  | This collection stores elements in order according to their indexes. Random access is available, real cost of      | Regular storage of homogeneous elements. Also, when the most operations are reads from random positions.
+      | which mainly depends on underlying structure. The most common representative here is ArrayList. Don't forget that  | A lot of uses of Stack: backtracking, evaluation of arithmetic expressions, Polish notation,
+      | Stack is a subclass to List. Such structure has LIFO nature (adding and removing happen to the same end.           | "correct brackets" problem. 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Queue | First In First Out (most commonly). Elements are being added to one end of the structure                           | Messaging between threads. Traversing of hierarchical structures.
+      | and being removed from the other. Some variants (like Deque) allow both operations on both ends.                   | Maintaining history of operations or web browser history.
+      |                                                                                                                    | Planning or distribution of resources to demanders (PriorityQueue).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Map   | Key-value storage. Some realizations allow to store null as a key. No duplicates between keys                      | Counting (words, sentences etc.).
+      | (insertion of a pair having a key, which is already present in such collection rewrites corresponding value).      | Serialization, deep-copying (via IdentityHashMap).
+      | Map allocates pairs according to hashes of their hashes. Because of this fact,                                     | Tasks when relations matter: "for a given X, what is Y"?
+      | collisions might happen from time to time, that's why there are several techniques for their resolving.            |

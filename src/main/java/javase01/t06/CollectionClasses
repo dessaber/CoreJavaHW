@@ -1,0 +1,32 @@
+                      | Ordering | Random Access | Key-Value Pairs | Allow Duplicates | Allows Null Values | Thread safe | Blocking Operations
+----------------------------------------------------------------------------------------------------------------------------------------------
+ArrayBlockingQueue    |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | void put(E e), E take(), E poll(long timeout, TimeUnit unit)
+ArrayDeque            |   Yes    |      No       |       No        |       Yes        |        No          |     No      |
+ArrayList             |   Yes    |      Yes      |       No        |       Yes        |        Yes         |     No      |
+ConcurrentHashMap     |   No     |      Yes      |       Yes       |   Not for keys   |        Yes         |     Yes     |
+ConcurrentLinkedDeque |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     |
+ConcurrentLinkedQueue |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     |
+ConcurrentSkipListMap |   Yes    |      Yes      |       Yes       |   Not for keys   |        No          |     Yes     |
+ConcurrentSkipListSet |   Yes    |      No       |       No        |       No         |        No          |     Yes     |
+CopyOnWriteArrayList  |   Yes    |      Yes      |       No        |       Yes        |        Yes         |     Yes     |
+CopyOnWriteArraySet   |   No     |      No       |       No        |       No         |        Yes         |     Yes     |
+DelayQueue            |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | void put(E e), E take(), E poll(long timeout, TimeUnit unit)
+EnumMap               |   Yes    |      Yes      |       Yes       |   Not for keys   |        No          |     No      |
+EnumSet               |   Yes    |      No       |       No        |       No         |        No          |     No      |
+HashMap               |   Yes    |      Yes      |       Yes       |   Not for keys   |        Yes         |     No      |
+HashSet               |   No     |      No       |       No        |       No         |        Yes         |     No      |
+Hashtable             |   No     |      Yes      |       Yes       |       No         |        No          |     Yes     |
+LinkedBlockingDeque   |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | E take(), E takeLast(), E takeFirst(), void put(E e), void putFirst(E e), void putLast(E e)
+LinkedBlockingQueue   |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | boolean offer(E e, long timeout, TimeUnit unit), void put(E e), E take(), E poll(long timeout, TimeUnit unit)
+LinkedHashMap         |   Yes    |      Yes      |       Yes       |   Not for keys   |        Yes         |     No      |
+LinkedHashSet         |   Yes    |      No       |       No        |       No         |        Yes         |     No      |
+LinkedList            |   Yes    |      No       |       No        |       Yes        |        Yes         |     No      |
+LinkedTransferQueue   |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | E poll(long timeout, TimeUnit unit), void transfer(E e), E take()
+PriorityBlockingQueue |   No     |      No       |       No        |       Yes        |        No          |     Yes     | void put(E e), E take()
+PriorityQueue         |   Yes    |      No       |       No        |       Yes        |        No          |     No      |
+Properties            |   Yes    |      Yes      |       Yes       |       No         |        No          |     No      |
+SynchronousQueue      |   Yes    |      No       |       No        |       Yes        |        No          |     Yes     | boolean offer(E e, long timeout, TimeUnit unit), void put(E e), E take(), E poll(long timeout, TimeUnit unit)
+Stack                 |   Yes    |      Yes      |       No        |       Yes        |        Yes         |     No      |
+TreeMap               |   Yes    |      Yes      |       Yes       |   Not for keys   |Yes (via Comparator)|     No      |
+TreeSet               |   Yes    |      No       |       No        |       No         |Yes (via Comparator)|     No      |
+Vector                |   Yes    |      Yes      |       No        |       Yes        |        Yes         |     Yes     |
